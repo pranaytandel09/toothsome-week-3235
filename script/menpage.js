@@ -1,12 +1,12 @@
 let productContainer= document.getElementById("products");
 let CartData= JSON.parse(localStorage.getItem("CartData"))||[]
-
+let Filter= document.getElementById("Filter")
 let data=[
     {
         id: 1,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596479_4108551.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 699,
         
     },
     {
@@ -19,25 +19,25 @@ let data=[
         id: 3,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666431708_4779814.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1500,
     },
     {
         id: 4,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1678882374_5588567.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 899,
     },
     {
         id: 5,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1674455643_2017557.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 1099,
+        price: 699,
     },
     {
         id: 6,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1678355685_7807227.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Polos",
-        price: 880,
+        price: 780,
     },
     {
         id: 7,
@@ -49,13 +49,13 @@ let data=[
         id: 8,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596330_7732611.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 709,
     },
     {
         id: 9,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1656667944_1746013.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 1099,
+        price: 1159,
     },
     {
         id: 10,
@@ -67,7 +67,7 @@ let data=[
         id: 11,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677592990_8308818.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 699,
     },
     {
         id: 12,
@@ -79,7 +79,7 @@ let data=[
         id: 13,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1668847309_1974426.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1800,
     },
     {
         id: 14,
@@ -91,25 +91,25 @@ let data=[
         id: 15,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1675180440_5865792.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1590,
     },
     {
         id: 16,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677590185_4507875.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Polos",
-        price: 880,
+        price: 860,
     },
     {
         id: 17,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1667461862_7711050.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 599,
     },
     {
         id: 18,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1666440075_6932603.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1890,
     },
     {
         id: 19,
@@ -121,31 +121,31 @@ let data=[
         id: 20,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596479_4108551.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 599,
     },
     {
         id: 21,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1678883483_8445605.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1600,
     },
     {
         id: 22,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596479_4108551.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 899,
     },
     {
         id: 23,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1664631272_7818899.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1750,
     },
     {
         id: 24,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596479_4108551.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 789,
     },
     {
         id: 25,
@@ -157,13 +157,13 @@ let data=[
         id: 26,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677596479_4108551.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 999,
     },
     {
         id: 27,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670344096_9495688.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1820,
     },
     {
         id: 28,
@@ -175,7 +175,7 @@ let data=[
         id: 29,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1678882086_6293631.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 1099,
+        price: 1089,
     },
     {
         id: 30,
@@ -187,27 +187,91 @@ let data=[
         id: 31,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1677591273_1746973.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 799,
+        price: 989,
     },
     {
         id: 32,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1670580881_7734364.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 1500,
     },
     {
         id: 33,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1674455752_1178191.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized Full sleeve T-Shirts",
-        price: 2000,
+        price: 2200,
     },
     {
         id: 34,
         img: "https://prod-img.thesouledstore.com/public/theSoul/uploads/catalog/product/1678882086_6293631.jpg?format=webp&w=300&dpr=1.3",
         type: "Oversized-T-Shirts",
-        price: 1099,
+        price: 1699,
     }
 ]
+
+
+
+Filter.addEventListener("submit",function(e){
+    e.preventDefault();
+    
+    // if(Filter.SelectPrice.value=="Low"){
+    //     price=799
+    //    }
+    //    if(Filter.SelectPrice.value=="Medium"){
+    //     price=1499;
+    //    }
+   
+    if(Filter.Selectcategory.value=="" && Filter.SelectPrice.value==""){
+        Display(data);
+        
+    }
+    else{  
+let Filtered= data.filter(function (el){
+       if(Filter.SelectPrice.value=="Low" && Filter.Selectcategory.value=="" ){
+        if( el.price<=799){
+            return true;
+        }
+       }
+      else if(Filter.SelectPrice.value=="Medium" && Filter.Selectcategory.value=="" ){
+        if( el.price>799 && el.price<=1499){
+            return true;
+        }
+       }
+       else if(Filter.SelectPrice.value=="High" && Filter.Selectcategory.value=="" ){
+        if( el.price>1499){
+            return true;
+        }
+       }
+
+       else if(Filter.SelectPrice.value=="Low" && Filter.Selectcategory.value !=="" ){
+        if( el.price<=799 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+      else if(Filter.SelectPrice.value=="Medium" && Filter.Selectcategory.value !=="" ){
+        if( el.price>799 && el.price<=1499 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+       else if(Filter.SelectPrice.value=="High" && Filter.Selectcategory.value !=="" ){
+        if( el.price>1499 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+
+
+
+      else if(Filter.SelectPrice.value=="" && Filter.Selectcategory.value !=="" ){
+        if(Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+
+})    
+    Display(Filtered);
+}
+
+})
 
 Display(data);
 function Display(data){
@@ -221,9 +285,15 @@ let price= document.createElement("h3");
 let CartBtn= document.createElement("button")
 CartBtn.innerText="Add To Cart"
 CartBtn.addEventListener("click",function(){
-    alert("Product added")
-    CartData.push(el)
-    localStorage.setItem("CartData",JSON.stringify(CartData))
+   
+        if(check (el)){
+            alert("Product added")
+            CartData.push({...el,quantity:1,size:"S"})
+            localStorage.setItem("CartData",JSON.stringify(CartData))
+        }
+        else{
+            alert("Product already in cart")
+        }
     })
 img.setAttribute("src",el.img);
 para.innerText= el.type;
@@ -233,4 +303,14 @@ Div.append(img,para,price,CartBtn);
 productContainer.append(Div);
 
     })
+}
+
+function check(product){
+for (let i=0; i<CartData.length; i++){
+    if(CartData[i].id===product.id){
+        return false;
+    }
+}
+return true;
+
 }

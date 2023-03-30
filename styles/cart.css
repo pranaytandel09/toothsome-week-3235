@@ -100,15 +100,17 @@ background-color: white;
 }
 #productContainer{
     width: 60%;
+    display: none;
     /* margin: auto; */
     /* border: 3px solid red; */
 }
 #paymentContainer{
-    width: 40%;
+    width: 30%;
     /* margin: auto; */
    
-    border: 3px solid red;
+    /* border: 3px solid red; */
 }
+
 #child{
     width: 100%;
     display: flex;
@@ -142,6 +144,67 @@ background-color: white;
 }
 #box2 select{
     margin-right: 20px;
+    padding: 3px;
+    border-radius: 8px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#billingInfo>div{
+    display: flex;
+    justify-content: space-between;
+    /* color:  rgb(72, 72, 72);; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#paymentContainer button{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    background-color:#117a7a;
+    color: white;
+    border: none;
+}
+#parentContainer>#Form{
+    /* border: 2px solid red; */
+   
+}
+#Form div{
+    /* border: 1px solid black; */
+    margin: 10px;
+
+}
+#Form div:nth-child(2)>input{
+    width: 100%;
+    margin: 0;
+}
+#Form div:nth-child(3)>input{
+    width: 100%;
+    margin: 0;
+}
+#Form div:nth-child(4)>input{
+    width: 100%;
+    margin: 0;
+}
+#Form div:nth-child(7)>input{
+    width: 100%;
+    margin: 0;
+}
+#Form input{
+    margin: 5px;
+    padding: 10px;
+  border: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+form>input{
+    background-color: #eb3e25;
+    color: white;
+   
+}
+#Form>h1{
+    text-align: center;
 }
 #Topfooter{
     /* text-align: center; */
