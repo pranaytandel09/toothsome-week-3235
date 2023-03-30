@@ -209,6 +209,68 @@ let data=[
     }
 ]
 
+
+Filter.addEventListener("submit",function(e){
+    e.preventDefault();
+    
+    // if(Filter.SelectPrice.value=="Low"){
+    //     price=799
+    //    }
+    //    if(Filter.SelectPrice.value=="Medium"){
+    //     price=1499;
+    //    }
+   
+    if(Filter.Selectcategory.value=="" && Filter.SelectPrice.value==""){
+        Display(data);
+        
+    }
+    else{  
+let Filtered= data.filter(function (el){
+       if(Filter.SelectPrice.value=="Low" && Filter.Selectcategory.value=="" ){
+        if( el.price<=799){
+            return true;
+        }
+       }
+      else if(Filter.SelectPrice.value=="Medium" && Filter.Selectcategory.value=="" ){
+        if( el.price>799 && el.price<=1499){
+            return true;
+        }
+       }
+       else if(Filter.SelectPrice.value=="High" && Filter.Selectcategory.value=="" ){
+        if( el.price>1499){
+            return true;
+        }
+       }
+
+       else if(Filter.SelectPrice.value=="Low" && Filter.Selectcategory.value !=="" ){
+        if( el.price<=799 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+      else if(Filter.SelectPrice.value=="Medium" && Filter.Selectcategory.value !=="" ){
+        if( el.price>799 && el.price<=1499 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+       else if(Filter.SelectPrice.value=="High" && Filter.Selectcategory.value !=="" ){
+        if( el.price>1499 && Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+
+
+
+      else if(Filter.SelectPrice.value=="" && Filter.Selectcategory.value !=="" ){
+        if(Filter.Selectcategory.value==el.type){
+            return true;
+        }
+       }
+
+})    
+    Display(Filtered);
+}
+
+})
 Display(data);
 function Display(data){
     productContainer.innerHTML="";
@@ -222,9 +284,14 @@ let CartBtn= document.createElement("button")
 CartBtn.innerText="Add To Cart"
 
 CartBtn.addEventListener("click",function(){
-    alert("Product added")
-CartData.push(el)
-localStorage.setItem("CartData",JSON.stringify(CartData))
+    if(check (el)){
+        alert("Product added")
+        CartData.push({...el,quantity:1,size:"S"})
+        localStorage.setItem("CartData",JSON.stringify(CartData))
+    }
+    else{
+        alert("Product already in cart")
+    }
 })
 img.setAttribute("src",el.img);
 para.innerText= el.type;
@@ -235,3 +302,12 @@ productContainer.append(Div);
 
     })
 }
+function check(product){
+    for (let i=0; i<CartData.length; i++){
+        if(CartData[i].id===product.id){
+            return false;
+        }
+    }
+    return true;
+    
+    }
