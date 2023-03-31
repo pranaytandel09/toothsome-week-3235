@@ -52,6 +52,7 @@ let flag=false;
  }
 if(flag){
     alert("SignIn Successful")
+    window.location.href="men.html";
 }
 else{
     alert("Wrong credentials")
@@ -71,4 +72,6 @@ RegForm.addEventListener("submit",function(e){
 
     regDetails.push(registrationData);
     localStorage.setItem("regDetails",JSON.stringify(regDetails))
+    alert("Registration Successful")
+    window.location.href="men.html"
 })
