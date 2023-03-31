@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./styles/login.css">
+    <title>Fauget Login Page</title>
+    
+</head>
+<body>
+    <div class="red"></div>
+    <div class="white"></div>
+    <div id="loginSection">
+        <h3 id="header"></h3>
+      <div id="Buttons">
+       <button id="loginBtn">
+        LOGIN
+       </button>
+       <button id="registerBtn">REGISTER</button>
+      </div>
+
+      <!-- login form -->
+      
+        <form action="" id="LoginForm">
+            <input type="text" placeholder=" Enter Username@user" id="Username">
+            <input type="password" placeholder="Enter Password" id="Password">
+            <input type="submit" class="submit" placeholder="LOGIN">
+        </form>
+
+            <!-- registration form -->
+
+        <form id="RegForm">
+            <div>
+                <input type="text" placeholder="First-Name" id="firstname"><input type="text" placeholder="Last-Name" id="lastname">
+            </div>
+            <div><input type="text" placeholder="Enter Username@user*" id="username"></div>
+            <div><input type="password" placeholder="Choose New Password*" id="pass"></div>
+            <div><input type="email" placeholder="Email ID*"  id="email"></div>
+           <div>
+            <input type="submit" class="submit">
+           </div>
+        </form>
+
+        <div id="show"> <span>New User?</span><a href="" id="showAnchor">Creat Account</a></div>
+        
+       
+    </div>
+
+    <div class="white"></div>
+    <div class="red"></div>
+    
+</body>
+<script src="./script/login.js"></script>
+</html>

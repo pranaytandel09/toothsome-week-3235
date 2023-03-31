@@ -5,6 +5,9 @@ body{
 *{
     box-sizing: border-box;
 }
+* button:hover{
+    cursor: pointer;
+}
 #nav{
     width: 100%;
     position: sticky;
@@ -91,7 +94,7 @@ background-color: white;
     color: white;
 }
 #parentContainer{
-    width: 80%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -99,16 +102,47 @@ background-color: white;
    
 }
 #productContainer{
-    width: 60%;
-    display: none;
+    width: 75%;
+    /* display: none; */
     /* margin: auto; */
     /* border: 3px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
 }
 #paymentContainer{
-    width: 30%;
+    width: 25%;
     /* margin: auto; */
-   
+  margin-top: 50px;
     /* border: 3px solid red; */
+}
+#Displayadd{
+    color: #117a7a;
+}
+#PaymentGateway{
+    display: none;
+}
+#PaymentGatewayData>h3{
+    /* border: 1px solid black; */
+    color: #117a7a;
+    margin-left: 20px;
+}
+#PaymentGatewayData>div{
+    /* border: 1px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    margin: 10px;
+    padding: 10px;
+}
+#PaymentGatewayData>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+#PaymentGatewayData>input{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+   display: block;
+margin-left: 10px;
 }
 
 #child{
@@ -134,7 +168,7 @@ background-color: white;
    
 }
 #box2 button{
-    display: block;
+   margin-left: 10px;
     background-color: black;
     color: white;
     padding: 5px;
@@ -168,7 +202,7 @@ background-color: white;
 }
 #parentContainer>#Form{
     /* border: 2px solid red; */
-   
+   display: none;
 }
 #Form div{
     /* border: 1px solid black; */

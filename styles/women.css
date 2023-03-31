@@ -5,6 +5,9 @@ body{
 *{
     box-sizing: border-box;
 }
+* button:hover{
+    cursor: pointer;
+}
 #nav{
     width: 100%;
     position: sticky;
