@@ -31,50 +31,75 @@
         </div>
      </div>
   <div id="parentContainer">
+     
     <div id="Form">
         <h1>Add New Address</h1>
         <form id="FormData">
             <div>
-                <input type="text" placeholder="First-Name"><input type="text" placeholder="Last-Name">
+                <input type="text" placeholder="First-Name" id="firstname"><input type="text" placeholder="Last-Name" id="lastname">
             </div>
-            <div><input type="text" placeholder="House No,Building Name*"></div>
-            <div><input type="text" placeholder="Street Name,Area*"></div>
-            <div><input type="text" placeholder="Landmark"></div>
-            <div> <input type="text" placeholder="Postal Code*"><input type="text" placeholder="City/Distict*"></div>
-           <div><input type="text" placeholder="India" value="India"><input type="text" placeholder="State"></div>
-            <div><input type="text" placeholder="Phone No*"></div>
+            <div><input type="text" placeholder="House No,Building Name*" id="line1"></div>
+            <div><input type="text" placeholder="Street Name,Area*" id="line2"></div>
+            <div><input type="text" placeholder="Landmark" id="line3"></div>
+            <div> <input type="text" placeholder="Postal Code*" id="code"><input type="text" placeholder="City/Distict*" id="city"></div>
+           <div><input type="text" placeholder="India" value="India" id="country"><input type="text" placeholder="State" id="state"></div>
+            <div><input type="text" placeholder="Phone No*"  id="mbnumber"></div>
             <input type="submit" >
         </form>
-    </div>
-     <div id="productContainer">
-     
-      </div>
-      <div id="paymentContainer">
-          <button id="PlaceOrder">Place Order</button>
-        
-         <div id="billingInfo">
-            <div><p>Billing Details</p></div>
-         <div>
-          <p>Cart Total</p>
-          <p id="Totalbill"></p>
-         </div>
-         <div>
-            <p>GST</p>
-            <p id="GST"></p>
-           </div>
-           <div>
-            <p>Shipping Charges</p>
-            <p id="Shippingcharges"></p>
-           </div>
-           <div>
-            <p>Total Amount</p>
-            <p id="Totalamount"></p>
-           </div>
-           <button id="PlaceOrder">Place Order</button>
-        </div>
-      </div>
-  </div>
+     </div>
 
+     <div id="PaymentGateway">
+
+        <form id="PaymentGatewayData">
+           <div>
+               <h3 id="Displayadd"></h3>
+           </div>
+           <h3>Payment Options</h3>
+          <div>
+           <p>UPI</p>
+           <div class="transaction"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNm5Ko_GE0cRh8eB-LipRHYxqEJlXSpZibXg&usqp=CAU" alt="">
+               <input type="radio" value="UPI" id="UPI"></div>
+              
+          </div>
+          <div>
+
+           <div class="transaction"> <p>COD</p>  <input type="radio" value="COD" id="COD"></div>
+          
+           <p>We recommend making prepaid payments to ensure your deliveries are contactless.</p>
+          </div>
+           <input type="submit">
+        </form>
+      </div>
+ 
+
+              <div id="productContainer"> </div>
+      <div id="paymentContainer">
+          <button id="PlaceOrder1">Place Order</button>
+        
+         <div id="billingInfo"> 
+             <div><p>Billing Details</p></div>
+                   <div> 
+                    <p>Cart Total</p>
+                     <p id="Totalbill"></p>
+                     </div>
+                   <div>
+               <p>GST</p>
+               <p id="GST"></p>
+                 </div>
+                <div>
+                     <p>Shipping Charges</p>
+                   <p id="Shippingcharges"></p>
+                   </div>
+                    <div>
+                      <p>Total Amount</p>
+                      <p id="Totalamount"></p>
+                     </div>
+           
+         </div>
+         <button id="PlaceOrder2">Place Order</button>
+      </div>
+ </div>
+ 
 
      <div id="Topfooter">
         <h1>HOMEGROWN INDIAN BRAND</h1>

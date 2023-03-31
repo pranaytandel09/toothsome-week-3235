@@ -1,32 +1,64 @@
 let CartData= JSON.parse(localStorage.getItem("CartData"))
-
+let globalData= JSON.parse(localStorage.getItem("globalData"))||[]
 let productContainer= document.getElementById("productContainer")
  
 let paymentContainer= document.getElementById("paymentContainer")
 let form= document.getElementById("FormData")
+//Form---> container && form---> actual form//
+let Form= document.getElementById("Form")
 let clientData= JSON.parse(localStorage.getItem("clientdata"))||[]
 let Total= document.createElement("h2");
 let CartTotal= document.getElementById("Totalbill")
 let GST= document.getElementById("GST")
-GST.innerText= `₹${132.33}`
-let gst=132.33;
+
+let gst=0;
+function checkGST(){
+  if(CartData.length==0){
+    gst=0;
+  }
+  else if(CartData.length>=1 &&CartData.length<=2){
+    gst=52.4
+  }
+  else if(CartData.length>=3){
+    gst=132.33
+  }
+  GST.innerText= `₹${gst}`
+}
+
+
 let ShippingCharges= document.getElementById("Shippingcharges")
 
 ShippingCharges.innerText= `₹${0}`
 let TotalAmount= document.getElementById("Totalamount")
- let OrderBtn= document.getElementById("PlaceOrder")
-// function CartValue(CartData){
-//   let sum=0;
-//   CartData.forEach(function(el){
-//   sum+= el.
+ let orderBtn1= document.getElementById("PlaceOrder1")
+ let orderBtn2= document.getElementById("PlaceOrder2")
+let Displayadd= document.getElementById("Displayadd")
+let PaymentGateway= document.getElementById("PaymentGateway")
+let PaymentGatewayData= document.getElementById("PaymentGatewayData")
 
-//   })
+let Transaction= document.getElementsByClassName("transaction")
+//billing data info
+let BillingData= JSON.parse(localStorage.getItem("billDetails"))||[];
+
+let bill;
+//------------//
+
+
+
+
+
+
+
+
+
+
+
 
 Display(CartData)
 
 function Display(data){
   productContainer.innerHTML="";
-
+  checkGST()
   sum(data)
 // console.log(data)
     data.forEach(function (el,index){
@@ -119,13 +151,15 @@ remove.addEventListener("click",function(){
     CartData.splice(index,1);
  localStorage.setItem("CartData",JSON.stringify(CartData))
  Display(CartData);
+
 })
 
-
+let BtnDiv= document.createElement("div")
+BtnDiv.append(apply,remove)
   img.setAttribute("src",el.img);
   type.innerText=el.type;
   price.innerText=`₹${el.price}`
-  box2.append(type,price,selectSize,selectQty,apply,remove)
+  box2.append(type,price,selectSize,selectQty,BtnDiv)
 box1.append(img)
 child.append(box1,box2)
 productContainer.append(child)
@@ -140,22 +174,93 @@ function sum(){
   for(let i=0; i<CartData.length; i++){
     total+= CartData[i].quantity* CartData[i].price;
   }
+  bill=total;
+  billTotal=total+gst;
 CartTotal.innerText= `₹${total}`
-TotalAmount.innerText= total + gst;
+TotalAmount.innerText= `₹${total + gst}`;
 }
 
 
-OrderBtn.addEventListener("click",function(){
+form.addEventListener("submit",function(e){
+  e.preventDefault();
 
-  productContainer.innerHTML=""
-
+  let user={
+    firstName: form.firstname.value,
+    lastName: form.lastname.value,
+    line1: form.line1.value,
+    line2: form.line2.value,
+    line3: form.line3.value,
+    code: form.code.value,
+    city: form.city.value,
+    country: form.country.value,
+    state: form.state.value,
+    number: form.mbnumber.value,
+  }
+  clientData.push(user);
+  // console.log(clientData)
+  localStorage.setItem("clientdata",JSON.stringify(clientData))
+  Form.style.display="none"
+  PaymentGateway.style.display="block";
+  Displayadd.innerText=`Deliver To: ${clientData[0].firstName} ${clientData[0].lastName}, ${clientData[0].code}`
+  // productContainer.style.display="block"
+  // Display(CartData)
+  // paymentContainer.style.display="none"
+  orderBtn1.innerText="CONFIRM ORDER"
+  orderBtn2.innerText="CONFIRM ORDER"
 })
 
+orderBtn1.addEventListener("click",function(){
 
-// form.addEventListener("submit",function(e){
-//   e.preventDefault();
+  let Bill={
+         productValue: bill,
+          GST: gst,
+          ShippingCharges:0,
+          TotalBill: billTotal,
+  }
+  BillingData.push(Bill);
+  localStorage.setItem("billDetails",JSON.stringify(BillingData))
 
-//   let user={
-//     name:
-//   }
-// })
+  productContainer.style.display="none"
+  Form.style.display="block"
+})
+orderBtn2.addEventListener("click",function(){
+
+  let Bill={
+    productValue: bill,
+     GST: gst,
+     ShippingCharges:0,
+     TotalBill: billTotal,
+}
+BillingData.push(Bill);
+localStorage.setItem("billDetails",JSON.stringify(BillingData))
+
+  productContainer.style.display="none"
+  Form.style.display="block"
+})
+
+PaymentGatewayData.addEventListener("submit",function(e){
+  e.preventDefault();
+
+
+  orderBtn1.innerText="ORDER CONFIRM!"
+  orderBtn2.innerText="ORDER CONFIRM!"
+
+
+  if(UPI.checked){
+globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.UPI.value}, ...clientData];
+  localStorage.setItem("globalData",JSON.stringify(globalData))
+  
+  }
+  else{
+    globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.COD.value}, ...clientData];
+    localStorage.setItem("globalData",JSON.stringify(globalData))
+  }
+localStorage.removeItem("billDetails");
+localStorage.removeItem("clientdata");
+localStorage.removeItem("CartData");
+
+
+  PaymentGateway.style.display="none";
+  productContainer.style.display="grid"
+  Display(CartData)
+})
