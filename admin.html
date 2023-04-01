@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/admin.css">
+    <title>Fauget Admin Page</title>
+</head>
+<body>
+     <div id="nav">
+      
+        <div class="bottombar">
+           <div> <img src="./Copy of Pink Simple Children's Apparel Logo (4).png" alt=""></div>
+                   <div>   <a href="" id="orders">ORDERS</a>
+                    <a href="" id="products">PRODUCTS</a>
+                    <a href="" id="customers">CUSTOMERS</a>
+                   
+                    </div>
+             <div>
+              <h4> pranaytandel09</h4>
+                 <button>LogOut</button>
+      
+              </div>
+        </div>
+     </div>
+
+
+     <div id="displayContainer">
+      <div id="Sex">
+        <span>Men</span><input type="radio" value="men" id="inputMen">
+        <span>Women</span><input type="radio" value="women" id="inputWomen">
+        <button id="checkBtn">Apply</button>
+    
+        <button id="newProductBtn">+ New Product</button>
+      </div>
+        <div id="Containerproducts1">
+            <table >
+                <thead>
+                    <tr>
+                        <th>PRODUCT_ID</th>
+                        <th>CATEGORY</th>
+                        <th>PRICE</th>
+                        <th>INVENTORY</th>
+                    </tr>
+                </thead>
+                <tbody id="Menproducts" >
+
+                </tbody>
+            </table>
+        </div>
+     </div>
+</body>
+<script src="./script/adminDashboard.js"></script>
+</html>

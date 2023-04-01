@@ -1,6 +1,6 @@
 let productContainer= document.getElementById("products");
 let CartData= JSON.parse(localStorage.getItem("CartData"))||[]
-
+let womenproducts= JSON.parse(localStorage.getItem("womenproducts"))||[]
 let data=[
     {
         id: 1,
@@ -208,6 +208,11 @@ let data=[
         price: 1099,
     }
 ]
+
+
+
+womenproducts=data;
+localStorage.setItem("womenproducts",JSON.stringify(womenproducts))
 
 
 Filter.addEventListener("submit",function(e){

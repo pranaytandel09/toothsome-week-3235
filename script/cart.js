@@ -247,11 +247,13 @@ PaymentGatewayData.addEventListener("submit",function(e){
 
 
   if(UPI.checked){
+  
 globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.UPI.value}, ...clientData];
   localStorage.setItem("globalData",JSON.stringify(globalData))
   
   }
   else{
+   
     globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.COD.value}, ...clientData];
     localStorage.setItem("globalData",JSON.stringify(globalData))
   }

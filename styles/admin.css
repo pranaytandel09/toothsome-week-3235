@@ -1,0 +1,121 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+*{
+    box-sizing: border-box;
+}
+#nav{
+    width: 100%;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
+}
+* button:hover{
+    cursor: pointer;
+}
+
+.bottombar{
+    width:100%;
+    display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: white;
+}
+.bottombar>div:nth-child(1){
+    /* border: 2px solid black; */
+}
+.bottombar>div:nth-child(2){
+    /* border: 2px solid black; */
+    color: rgb(72, 72, 72);
+    flex-grow: 0.3;
+    display: flex;
+    justify-content: space-between;
+}
+.bottombar>div:nth-child(2)> a{
+    text-decoration: none;
+    color: rgb(72, 72, 72);
+}
+.bottombar>div:nth-child(3){
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 0.1;
+    /* border: 2px solid black; */
+}
+.bottombar>div:nth-child(3)>button{
+    background-color: #e11b23;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+}
+.bottombar>div:nth-child(3)>button>a{
+    text-decoration: none;
+    color: white;
+}
+#displayContainer{
+    width: 80%;
+    margin: auto;
+    /* border: 2px solid black; */
+  margin-bottom: 50px;
+    margin-top: 50px;
+}
+#Containerproducts1{
+    width: 100%;
+    display: none;
+  
+}
+#Sex{
+    /* border: 1px solid black; */
+    margin: 20px;
+    padding: 20px;
+   
+}
+#Sex>#newProductBtn{
+    margin-right: -0%;
+    background-color: black;
+    color: white;
+    margin-left: 70%;
+}
+#Sex button{
+    margin-left: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(119, 118, 118);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* table{
+   width: 100%;
+   margin: auto;
+  
+} */
+
+table{
+    width: 100%;
+  
+   
+    margin: auto;
+    padding: 10px;
+    /* background-color: bisque; */
+   text-align: center;
+    background-color: rgb(255, 255, 255);
+  }
+  table th{
+  
+   font-size: 20px;
+    /* color:black; */
+    padding: 18px;
+    /* background-color: rgb(254, 180, 7); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+  table td{
+    padding: 18px;
+    /* color:black; */
+    /* background-color: rgb(254, 229, 7); */
+    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
