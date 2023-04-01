@@ -1,5 +1,6 @@
 let productContainer= document.getElementById("products");
 let CartData= JSON.parse(localStorage.getItem("CartData"))||[]
+let menproducts= JSON.parse(localStorage.getItem("menproducts"))||[]
 let Filter= document.getElementById("Filter")
 let data=[
     {
@@ -209,6 +210,8 @@ let data=[
     }
 ]
 
+ menproducts=data;
+localStorage.setItem("menproducts",JSON.stringify(menproducts))
 
 
 Filter.addEventListener("submit",function(e){
