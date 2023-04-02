@@ -1,6 +1,18 @@
 let productContainer= document.getElementById("products");
 let CartData= JSON.parse(localStorage.getItem("CartData"))||[]
 let womenproducts= JSON.parse(localStorage.getItem("womenproducts"))||[]
+let LogOut= document.getElementById("LogOut")
+let LoginId=document.getElementById("LoginId")
+let regDetails= JSON.parse(localStorage.getItem("regDetails"));
+
+LoginId.innerText=regDetails[0].username;
+
+LogOut.addEventListener("click",function(){
+    alert("Loging Out")
+    window.location.href="index.html"
+ })
+
+
 let data=[
     {
         id: 1,
@@ -291,7 +303,7 @@ CartBtn.innerText="Add To Cart"
 CartBtn.addEventListener("click",function(){
     if(check (el)){
         alert("Product added")
-        CartData.push({...el,quantity:1,size:"S"})
+        CartData.push({...el,quantity:1,size:"S",price:el.price})
         localStorage.setItem("CartData",JSON.stringify(CartData))
     }
     else{

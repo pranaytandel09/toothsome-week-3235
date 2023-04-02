@@ -35,6 +35,11 @@ background-color: white;
 .bottombar>div:nth-child(2)> a{
     text-decoration: none;
     color: rgb(72, 72, 72);
+    font-size: 20px;
+}
+.bottombar>div:nth-child(2)> a:nth-child(1){
+    text-decoration: none;
+    color:purple;
 }
 .bottombar>div:nth-child(3){
     display: flex;
@@ -61,16 +66,20 @@ background-color: white;
   margin-bottom: 50px;
     margin-top: 50px;
 }
+#Orders{
+     /* border: 2px solid black; */
+    display: none;
+}
 #Containerproducts1{
     width: 100%;
-    display: none;
+   /* display: none; */
   
 }
 #Sex{
     /* border: 1px solid black; */
     margin: 20px;
     padding: 20px;
-   
+   /* display: none; */
 }
 #Sex>#newProductBtn{
     margin-right: -0%;
@@ -87,6 +96,7 @@ background-color: white;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
 
 /* table{
    width: 100%;

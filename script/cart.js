@@ -1,5 +1,5 @@
 let CartData= JSON.parse(localStorage.getItem("CartData"))
-let globalData= JSON.parse(localStorage.getItem("globalData"))||[]
+// let globalData= JSON.parse(localStorage.getItem("globalData"))||[]
 let productContainer= document.getElementById("productContainer")
  
 let paymentContainer= document.getElementById("paymentContainer")
@@ -247,19 +247,32 @@ PaymentGatewayData.addEventListener("submit",function(e){
 
 
   if(UPI.checked){
-  
-globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.UPI.value}, ...clientData];
-  localStorage.setItem("globalData",JSON.stringify(globalData))
+  console.log(UPI.value)
+// globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.UPI.value}, ...clientData];
+//   localStorage.setItem("globalData",JSON.stringify(globalData))
+
+BillingData.forEach(function(el,index){
+  BillingData.push({...el,Transaction:"UPI"})
+  BillingData.splice(index,1);
+  localStorage.setItem("billDetails",JSON.stringify(BillingData))
+})
+
   
   }
   else{
    
-    globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.COD.value}, ...clientData];
-    localStorage.setItem("globalData",JSON.stringify(globalData))
+    // globalData=[...CartData, {...BillingData,Transaction:PaymentGatewayData.COD.value}, ...clientData];
+    // localStorage.setItem("globalData",JSON.stringify(globalData))
+    BillingData.forEach(function(el,index){
+      BillingData.push({...el,Transaction:"COD"})
+      BillingData.splice(index,1);
+      localStorage.setItem("billDetails",JSON.stringify(BillingData))
+    })
+
   }
-localStorage.removeItem("billDetails");
-localStorage.removeItem("clientdata");
-localStorage.removeItem("CartData");
+// localStorage.removeItem("billDetails");
+// localStorage.removeItem("clientdata");
+// localStorage.removeItem("CartData");
 
 
   PaymentGateway.style.display="none";
