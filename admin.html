@@ -12,21 +12,24 @@
       
         <div class="bottombar">
            <div> <img src="./Copy of Pink Simple Children's Apparel Logo (4).png" alt=""></div>
-                   <div>   <a href="" id="orders">ORDERS</a>
+                   <div>  
                     <a href="" id="products">PRODUCTS</a>
-                    <a href="" id="customers">CUSTOMERS</a>
+                     <a href="" id="orders">ORDERS</a>
+                    <!-- <a href="" id="products">PRODUCTS</a> -->
+                   
                    
                     </div>
              <div>
-              <h4> pranaytandel09</h4>
-                 <button>LogOut</button>
+              <h4 id="AdminID"> pranaytandel09</h4>
+                 <button id="LogOut">LogOut</button>
       
               </div>
         </div>
      </div>
 
 
-     <div id="displayContainer">
+    <div id="displayContainer">
+        <!-- //content for product option------------------ -->
       <div id="Sex">
         <span>Men</span><input type="radio" value="men" id="inputMen">
         <span>Women</span><input type="radio" value="women" id="inputWomen">
@@ -49,6 +52,54 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- -------------------------------------- -->
+
+        <!-- content for Orders option------------ -->
+
+        <div id="Orders">
+
+            <table >
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Date added</th>
+                        <th>Customer</th>
+                        <th>Payment Status</th>
+                        <th>Dilevery Adress</th>
+                        <th>Quantity</th>
+                        <th>Bill</th>
+                    </tr>
+                </thead>
+                <tbody id="orderDetails" >
+
+                </tbody>
+            </table>
+
+        </div>
+        <!-- ------------------------------------------ -->
+
+        <!-- content for Customers option------------------- -->
+<!-- 
+                 <div id="Customer">
+                    <table >
+                        <thead>
+                            <tr>
+                                <th>Product Id</th>
+                                <th>Date added</th>
+                                <th>Customer</th>
+                                <th>Payment Status</th>
+                                <th>Dilevery Adress</th>
+                                <th>Quantity</th>
+                                <th>Bill</th>
+                            </tr>
+                        </thead>
+                        <tbody id="orderDetails" >
+        
+                        </tbody>
+                    </table>
+                 </div> -->
+
      </div>
 </body>
 <script src="./script/adminDashboard.js"></script>

@@ -1,14 +1,27 @@
 let loginBtn= document.getElementById("loginBtn")
 let registerBtn= document.getElementById("registerBtn")
+let userBtn=document.getElementById("userBtn")
+let adminBtn=document.getElementById("adminBtn")
+let backToType1= document.getElementById("backToType1")
+let backToType2= document.getElementById("backToType2")
+//catching all coontainers--------------
+let type= document.getElementById("type");
+let loginSection= document.getElementById("loginSection")
+let loginSectionAdmin=document.getElementById("loginSectionAdmin")
+
+// ------------------------------------
 let LoginForm= document.getElementById("LoginForm")
 let RegForm = document.getElementById("RegForm")
+let AdminForm =document.getElementById("LoginFormAdmin")
+
+
 let show= document.getElementById("show")
 let showAnchor=document.getElementById("showAnchor")
 let regDetails= JSON.parse(localStorage.getItem("regDetails"))||[]
 
-
-
-
+// LS for admin----------------
+let adminData= JSON.parse(localStorage.getItem("adminData"))||[];
+// -----------------------------------------
 
 loginBtn.addEventListener("click",function(){
     loginBtn.style.backgroundColor="#117a7a"
@@ -40,6 +53,44 @@ registerBtn.addEventListener("click",function(){
     RegForm.style.display="block"
     show.style.display="none"
 })
+
+adminBtn.addEventListener("click",function(){
+   
+    type.style.display="none"
+    loginSection.style.display="none"
+    loginSectionAdmin.style.display="block"
+
+    let Data=
+    {
+         adminUsername: "Sharma@Admin",
+         adminPass: "Sharma123",
+
+    }
+    adminData.push(Data);
+    localStorage.setItem("adminData",JSON.stringify(adminData))
+})
+userBtn.addEventListener("click",function(){
+   
+    type.style.display="none"
+    loginSection.style.display="block"
+   
+})
+
+backToType1.addEventListener("click",function(){
+    loginSection.style.display="none"
+    // loginSectionAdmin.style.display="none"
+    type.style.display="block"
+  
+})
+backToType2.addEventListener("click",function(){
+    // loginSection.style.display="none"
+    loginSectionAdmin.style.display="none"
+    type.style.display="block"
+  
+})
+
+
+// user login--------------------
 
 
 LoginForm.addEventListener("submit",function(e){
@@ -75,3 +126,25 @@ RegForm.addEventListener("submit",function(e){
     alert("Registration Successful")
     window.location.href="men.html"
 })
+
+// ----------------------------------------------
+
+// Admin login----------------------------------
+
+
+AdminForm.addEventListener("submit",function(e){
+    e.preventDefault();
+    let flag=false;
+     for(let i=0; i<adminData.length; i++){
+        if(`${AdminForm.AdminUsername.value}@Admin` ===adminData[i].adminUsername && AdminForm.AdminPassword.value ===adminData[i].adminPass){
+            flag=true;
+        }
+     }
+    if(flag){
+        alert("Welcome Admin")
+        window.location.href="admin.html";
+    }
+    else{
+        alert("Wrong credentials")
+    }
+    })
