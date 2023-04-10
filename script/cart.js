@@ -10,7 +10,10 @@ let clientData= JSON.parse(localStorage.getItem("clientdata"))||[]
 let Total= document.createElement("h2");
 let CartTotal= document.getElementById("Totalbill")
 let GST= document.getElementById("GST")
-
+let Logo =document.getElementById("Logo")
+Logo.addEventListener("click",function(){
+    window.location.href="men.html"
+})
 let gst=0;
 function checkGST(){
   if(CartData.length==0){

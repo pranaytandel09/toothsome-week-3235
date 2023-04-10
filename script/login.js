@@ -62,7 +62,7 @@ adminBtn.addEventListener("click",function(){
 
     let Data=
     {
-         adminUsername: "Sharma@Admin",
+         adminUsername: "Sharma",
          adminPass: "Sharma123",
 
     }
@@ -97,7 +97,7 @@ LoginForm.addEventListener("submit",function(e){
 e.preventDefault();
 let flag=false;
  for(let i=0; i<regDetails.length; i++){
-    if(`${LoginForm.Username.value}@user` ===regDetails[i].username && LoginForm.Password.value ===regDetails[i].pass){
+    if(`${LoginForm.Username.value}` ===regDetails[i].username && LoginForm.Password.value ===regDetails[i].pass){
         flag=true;
     }
  }
@@ -116,7 +116,7 @@ RegForm.addEventListener("submit",function(e){
     let registrationData={
         name:RegForm.firstname.value,
         surname:RegForm.lastname.value,
-        username: `${RegForm.username.value}@user`,
+        username: `${RegForm.username.value}`,
         pass: RegForm.pass.value,
         email: RegForm.email.value,
     }
@@ -136,7 +136,7 @@ AdminForm.addEventListener("submit",function(e){
     e.preventDefault();
     let flag=false;
      for(let i=0; i<adminData.length; i++){
-        if(`${AdminForm.AdminUsername.value}@Admin` ===adminData[i].adminUsername && AdminForm.AdminPassword.value ===adminData[i].adminPass){
+        if(`${AdminForm.AdminUsername.value}` ===adminData[i].adminUsername && AdminForm.AdminPassword.value ===adminData[i].adminPass){
             flag=true;
         }
      }

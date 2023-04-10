@@ -165,6 +165,11 @@ box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 20px;
 }
+#RegForm> div:nth-child(1){
+    display: flex;
+    margin: 10px;
+    width: 100%;
+}
 
 #loginSectionAdmin{
     width:30%;
@@ -230,4 +235,85 @@ box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
    color: black;
    border-radius: 20px;
    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+@media all and (min-width:768px) and (max-width:1024px){
+
+    #typeBtn{
+        height: 150px;
+    }
+    #typeBtn button{
+        width: 42%;
+        padding: 20px;
+        margin: 10px;
+        color: white;
+    background-color: #117a7a;
+    border:none;
+    box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    #loginSection{
+        width:65%;
+    }
+    #RegForm> div:nth-child(1)>input{
+   
+        margin: auto;
+        width: 100%;
+        margin-top: 20px;
+    }
+    #RegForm> div:nth-child(1){
+   display: block;
+        margin: 10px;
+        width: 100%;
+       
+    }
+}
+
+@media all and (max-width:768px){
+    #typeBtn{
+        display: block;
+        margin: auto;
+        height: auto;
+        text-align: center;
+     
+    }
+    #typeBtn button{
+        width: 70%;
+    }
+    #loginSection{
+        width:65%;
+    }
+    #registerBtn{
+        width: 80%;
+        display: block;
+        margin-top: 20px;
+    }
+    #loginBtn{
+        width: 80%;
+        display: block;
+        margin-top: 20px;
+    }
+    #Buttons{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        align-items: center;
+       
+    }
+    #RegForm> div:nth-child(1)>input{
+        display: block;
+            margin: auto;
+            width: 100%;
+            margin-top: 20px;
+        }
+        #RegForm> div:nth-child(1){
+            display: block;
+                 margin: 10px;
+                 width: 100%;
+           
+        }
+        #loginBtnAdmin{
+            width: 50%;
+        }
+        #loginSectionAdmin{
+            width: 40%;
+        }
 }

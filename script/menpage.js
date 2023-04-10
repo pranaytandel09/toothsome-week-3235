@@ -5,7 +5,10 @@ let Filter= document.getElementById("Filter")
 let LogOut= document.getElementById("LogOut")
 let LoginId=document.getElementById("LoginId")
 let regDetails= JSON.parse(localStorage.getItem("regDetails"));
-
+let Logo =document.getElementById("Logo")
+Logo.addEventListener("click",function(){
+    window.location.href="men.html"
+})
 LoginId.innerText=regDetails[0].username;
 
 LogOut.addEventListener("click",function(){
