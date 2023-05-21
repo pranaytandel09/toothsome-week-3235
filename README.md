@@ -1,6 +1,6 @@
 # toothsome-week-3235
 
-FAUGET: Clone Of SouledStone
+FAUGET: Clone Of SouledStore
 ===============================
 
 Tech Stacks used:
