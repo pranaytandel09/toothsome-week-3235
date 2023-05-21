@@ -13,9 +13,9 @@ Functionalities:
 
 UserPage:
 1. Login/Signup
-2. Sort
-a) sort by category
-b) sort by price
+2. Filter
+a) filter by category
+b) filter by price
 3. Add to cartPage
 4. Increase/Decrease Quantity
 5. Delete from cartPage
