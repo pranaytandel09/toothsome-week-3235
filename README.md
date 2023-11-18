@@ -13,13 +13,16 @@ Functionalities:
 
 UserPage:
 1. Login/Signup
-2. Filter
+   for admin login 
+   Username: "Sharma",
+   Password: "Sharma123"
+3. Filter
 a) filter by category
 b) filter by price
-3. Add to cartPage
-4. Increase/Decrease Quantity
-5. Delete from cartPage
-6. Buy the product
+4. Add to cartPage
+5. Increase/Decrease Quantity
+6. Delete from cartPage
+7. Buy the product
 
 AdminPage:
 1. Login/Signup
